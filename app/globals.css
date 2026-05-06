@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F8F8F6;
+  --ink: #050505;
+  --electric: #003BFF;
+  --cyan: #2DD4FF;
+  --highlight: #D9FF00;
+  --soft: #D9D9D9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-feature-settings: "ss01", "ss02", "cv01", "cv11";
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Selection */
+::selection {
+  background: var(--electric);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 0px; background: transparent; }
+
+/* Custom utilities */
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1.5px var(--ink);
+    color: transparent;
+  }
+  .text-stroke-white {
+    -webkit-text-stroke: 1.5px #fff;
+    color: transparent;
+  }
+  .text-stroke-blue {
+    -webkit-text-stroke: 1.5px var(--electric);
+    color: transparent;
+  }
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.08;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    animation: grain 8s steps(10) infinite;
+    z-index: 50;
+  }
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply;
+  }
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(5,5,5,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(5,5,5,0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(to right, #000 60%, transparent);
+            mask-image: linear-gradient(to right, #000 60%, transparent);
+  }
+}
+
+/* Custom cursor */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width .25s ease, height .25s ease, background .25s ease;
+}
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width .3s ease, height .3s ease, border-color .3s ease;
+}
+.cursor-active .cursor-dot {
+  width: 0;
+  height: 0;
+}
+.cursor-active .cursor-ring {
+  width: 64px;
+  height: 64px;
+  border-color: var(--electric);
+  background: rgba(0, 59, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* Magnetic hover */
+.magnetic { transition: transform .2s ease; }
+
+/* Marquee fix */
+.marquee-track { display: flex; width: max-content; }
+
+/* Brush highlight behind text */
+.brush-highlight {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+.brush-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 8% -4% 6% -4%;
+  background: var(--electric);
+  z-index: -1;
+  border-radius: 8px;
+  transform: skew(-4deg, -1deg);
+  filter: blur(0.5px);
+}
+
+.scribble-underline {
+  background-image: linear-gradient(transparent 92%, var(--electric) 92%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Smooth scroll body lock */
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
