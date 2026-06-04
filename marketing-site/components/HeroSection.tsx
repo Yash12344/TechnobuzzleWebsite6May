@@ -185,11 +185,10 @@ export default function HeroSection() {
               {/* Image */}
               <div className="relative h-full w-full overflow-hidden rounded-[2rem]">
                 <Image
-                  src="https://loremflickr.com/900/1100/indian,businessman,professional/all?lock=7"
+                  src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?auto=format&fit=crop&w=900&q=80"
                   alt="Confident Indian marketing professional"
                   fill
                   priority
-                  unoptimized
                   className="object-cover"
                   sizes="(max-width: 1024px) 90vw, 520px"
                 />

@@ -138,21 +138,16 @@ body {
 /* Marquee fix */
 .marquee-track { display: flex; width: max-content; }
 
-/* Brush highlight behind text */
+/* Brush highlight behind text — tight, clones across line breaks */
 .brush-highlight {
-  position: relative;
+  background-color: var(--electric);
+  color: #fff;
+  padding: 0.02em 0.18em;
+  border-radius: 0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transform: skew(-3deg);
   display: inline-block;
-  isolation: isolate;
-}
-.brush-highlight::before {
-  content: "";
-  position: absolute;
-  inset: 8% -4% 6% -4%;
-  background: var(--electric);
-  z-index: -1;
-  border-radius: 8px;
-  transform: skew(-4deg, -1deg);
-  filter: blur(0.5px);
 }
 
 .scribble-underline {
