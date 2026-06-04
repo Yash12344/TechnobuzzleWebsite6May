@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
 import ServicesSection from "@/components/ServicesSection";
+import ClientsSection from "@/components/ClientsSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import AILabSection from "@/components/AILabSection";
 import CTASection from "@/components/CTASection";
@@ -8,7 +9,7 @@ import Footer from "@/components/Footer";
 
 // NOTE: The client case-studies section (components/CaseStudies.tsx) is
 // intentionally not rendered yet — Technobuzzle has no client work to show.
-// To re-enable in future: import it and add <CaseStudies /> below ServicesSection.
+// To re-enable in future: import it and add <CaseStudies /> below ClientsSection.
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <StatsBar />
       <ServicesSection />
+      <ClientsSection />
       <ProcessTimeline />
       <AILabSection />
       <CTASection />
