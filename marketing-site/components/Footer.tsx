@@ -92,15 +92,17 @@ export default function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-bg/85">
               <li>
                 <span className="block font-anton text-lg uppercase">Dehradun</span>
-                Rajpur Road, Dehradun
+                1st Floor, B-146, Nehru Colony,
                 <br />
-                Uttarakhand 248001, India
+                Dehradun, Uttarakhand 248001
               </li>
               <li>
                 <span className="block font-anton text-lg uppercase">Get in touch</span>
                 teamtechnobuzzle@gmail.com
                 <br />
-                +91 99999 00000
+                +91 97604 03272
+                <br />
+                +91 70176 68321
               </li>
             </ul>
           </div>

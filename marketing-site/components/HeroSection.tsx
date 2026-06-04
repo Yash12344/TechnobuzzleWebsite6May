@@ -135,35 +135,9 @@ export default function HeroSection() {
               <MagneticButton href="#cta" variant="primary">
                 Start a project <ArrowUpRight className="h-4 w-4" />
               </MagneticButton>
-              <MagneticButton href="#case-studies" variant="outline">
-                See our work
+              <MagneticButton href="#services" variant="outline">
+                Explore services
               </MagneticButton>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.4, duration: 1 }}
-              className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-ink/10 pt-6 text-ink/80"
-            >
-              <div>
-                <div className="font-anton text-3xl text-ink md:text-4xl">10X</div>
-                <div className="mt-1 text-[11px] uppercase tracking-widest text-ink/55">
-                  Avg. growth
-                </div>
-              </div>
-              <div>
-                <div className="font-anton text-3xl text-ink md:text-4xl">500+</div>
-                <div className="mt-1 text-[11px] uppercase tracking-widest text-ink/55">
-                  Projects shipped
-                </div>
-              </div>
-              <div>
-                <div className="font-anton text-3xl text-ink md:text-4xl">24</div>
-                <div className="mt-1 text-[11px] uppercase tracking-widest text-ink/55">
-                  Awards / 2024
-                </div>
-              </div>
             </motion.div>
           </motion.div>
 

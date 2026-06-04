@@ -6,10 +6,9 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Work", href: "#case-studies" },
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
-  { label: "AI Lab", href: "#ai-lab" },
+  { label: "Marketing AI", href: "#ai-lab" },
   { label: "Contact", href: "#cta" },
 ];
 

@@ -60,11 +60,11 @@ export default function CTASection() {
                   Book a call <ArrowUpRight className="h-4 w-4" />
                 </MagneticButton>
                 <MagneticButton
-                  href="#case-studies"
+                  href="#services"
                   className="border border-bg/40 text-bg hover:bg-bg hover:text-ink"
                   variant="ghost"
                 >
-                  See selected work
+                  Explore services
                 </MagneticButton>
               </div>
 
@@ -81,13 +81,19 @@ export default function CTASection() {
                   <div className="text-[11px] uppercase tracking-widest text-bg/65">
                     Phone
                   </div>
-                  <div className="mt-1 font-anton text-xl">+91 99999 00000</div>
+                  <div className="mt-1 font-anton text-xl">
+                    +91 97604 03272
+                    <br />
+                    +91 70176 68321
+                  </div>
                 </div>
                 <div>
                   <div className="text-[11px] uppercase tracking-widest text-bg/65">
-                    Studio
+                    Address
                   </div>
-                  <div className="mt-1 font-anton text-xl">Dehradun · IN</div>
+                  <div className="mt-1 font-anton text-lg leading-tight">
+                    1st Floor, B-146, Nehru Colony, Dehradun, Uttarakhand 248001
+                  </div>
                 </div>
               </div>
             </div>
